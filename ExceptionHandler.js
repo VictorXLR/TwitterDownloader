@@ -31,7 +31,7 @@ exports.productionErrors = (err, req, res, next) => {
             break
         case 620:
             req.code = "620: request to an unsupported route"
-            res.send("Welcome to Rip Me made by @SASORIZOU")
+            res.send({ error: "620: request to an unsupported route" })
             break
         default:
             console.log(`CRITICAL ERROR OCCURRED: ${err}`)

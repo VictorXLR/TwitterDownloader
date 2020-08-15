@@ -4,7 +4,7 @@ let router = express.Router()
 // Set up global state of the program
 router.all("*", (req, res, next) => {
     if (!req.skip) {
-        req.validURL = false
+        req.twitterURL = false
         req.urlx = `Route: ${req.path}`
         req.quality = null
         req.success = false
