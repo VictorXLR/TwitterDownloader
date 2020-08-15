@@ -4,7 +4,7 @@
   "description": "a quick tool to serve mp4 links for twitter videos",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
