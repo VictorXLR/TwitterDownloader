@@ -9,7 +9,6 @@ const cors = require("cors")
 require("dotenv").config()
 
 let router = require("./routes/router")
-let downloadRouter = require("./routes/downloadHandler")
 let urlRouter = require("./routes/LinkRouter")
 let exceptionHandler = require("./ExceptionHandler")
 
@@ -37,7 +36,6 @@ morgan.token("quality", function getQuality(req) {
         return "NA"
 })
 
-
 morgan.token("path", function getPath(req) {
     return req.pathx ? req.pathx : req.path
 })
@@ -48,12 +46,10 @@ app.use(morgan(":method, :path, :response-time ms, :url, :quality quality"))
 // Im thinking SQLite since its structured information at least for now :)
 
 // Routing Handlers
-app.use("/download", downloadRouter)
 app.use("/link", urlRouter)
 app.all("*", router)
 
 // Error Handling
 app.use(exceptionHandler.productionErrors)
-
 
 app.listen(port, () => console.log(`TwitterDownloader running at port ${port}`))

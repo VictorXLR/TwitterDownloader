@@ -1,13 +1,10 @@
 exports.catchAsyncErrors = def => {
-    console.log("Test, executed from catchAsyncExceptions")
     return function (req, res, next) {
         return def(req, res, next).catch(next)
     }
 }
 
 exports.productionErrors = (err, req, res, next) => {
-    console.log("Exception from program execution");
-
     switch (err) {
         case 600:
             req.code = "600: no url found"

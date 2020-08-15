@@ -62,8 +62,6 @@ PostOperation = exceptionHandler.catchAsyncErrors(async (req, res, next) => {
     next()
 })
 
-
-
 router.get("/", GetOperation)
 router.post("/", PostOperation)
 
