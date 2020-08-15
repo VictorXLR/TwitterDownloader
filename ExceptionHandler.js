@@ -28,7 +28,8 @@ exports.productionErrors = (err, req, res, next) => {
             break
         case 620:
             req.code = "620: request to an unsupported route"
-            res.send({ error: "620: request to an unsupported route" })
+            res.redirect("https://victorxlr.me");
+
             break
         default:
             console.log(`CRITICAL ERROR OCCURRED: ${err}`)
