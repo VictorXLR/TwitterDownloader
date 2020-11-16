@@ -11,6 +11,7 @@ require("dotenv").config()
 let router = require("./routes/router")
 let urlRouter = require("./routes/LinkRouter")
 let exceptionHandler = require("./ExceptionHandler")
+let BinaryRouter = require("./routes/ExecRouter")
 
 // special variables
 const port = process.env.PORT || 3000
@@ -47,9 +48,10 @@ app.use(morgan(":method, :path, :response-time ms, :url, :quality quality"))
 
 // Routing Handlers
 app.use("/link", urlRouter)
+app.use("/url", BinaryRouter)
 app.all("*", router)
 
 // Error Handling
 app.use(exceptionHandler.productionErrors)
 
-app.listen(port, () => console.log(`TwitterDownloader running at port ${port}`))
+app.listen(port, () => console.log(`VideoDownloader running at port ${port}`))
