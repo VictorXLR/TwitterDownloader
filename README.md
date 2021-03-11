@@ -16,7 +16,7 @@ curl -u 'API key:API secret key' \
 This App will take a POST request with parameters in the format of 
 ```json
 {
-	"url": "https://twitter.com/engineeringvids/status/1294115032586838016",
+	"url": "https://twitter.com/FreddieGibbs/status/1322028151615021056",
 	"quality": "high"
 }
 ```
@@ -25,6 +25,9 @@ and return a direct url to the video so it can be saved to my camera roll :)
 
 
 ### It is currently deployed at 
-`twit.victorxlr.me/link`
+
+Twitter Endpoints: `dl.victorxlr.me/link`
+
+Non-Twitter Endpoints: `dl.victorxlr.me/bin`
 
 ![](./postman.png)

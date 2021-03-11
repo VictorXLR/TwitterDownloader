@@ -1,7 +1,7 @@
 const axios = require("axios")
 const express = require("express")
 const router = express.Router()
-
+const execRouter = require("./BinaryRouter")
 const exceptionHandler = require("../ExceptionHandler")
 const helpers = require("../helpers")
 

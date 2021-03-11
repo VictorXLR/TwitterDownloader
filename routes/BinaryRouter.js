@@ -1,9 +1,10 @@
 const execa = require("execa")
 const express = require("express")
 const BinService = require("../BinService")
-const router = express.Router()
 const exceptionHander = require("../ExceptionHandler")
 const helpers = require("../helpers")
+
+const router = express.Router()
 
 getVersion = (req, res) => {
     BinService.get_version()

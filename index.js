@@ -11,7 +11,7 @@ require("dotenv").config()
 let router = require("./routes/router")
 let urlRouter = require("./routes/LinkRouter")
 let exceptionHandler = require("./ExceptionHandler")
-let BinaryRouter = require("./routes/ExecRouter")
+let BinaryRouter = require("./routes/BinaryRouter")
 
 // special variables
 const port = process.env.PORT || 3000
@@ -48,7 +48,7 @@ app.use(morgan(":method, :path, :response-time ms, :url, :quality quality"))
 
 // Routing Handlers
 app.use("/link", urlRouter)
-app.use("/url", BinaryRouter)
+app.use("/bin", BinaryRouter)
 app.all("*", router)
 
 // Error Handling
