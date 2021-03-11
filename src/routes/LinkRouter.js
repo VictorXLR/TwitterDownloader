@@ -42,7 +42,7 @@ PostOperation = exceptionHandler.catchAsyncErrors(async (req, res, next) => {
             method: "get",
             url: requestURL,
             headers: {
-                authorization: process.env.TOKEN
+                authorization: "Bearer " + process.env.TOKEN
             }
         })
     } catch (error) {

@@ -1,6 +1,5 @@
 // Package imports
 const express = require("express")
-const bodyParser = require("body-parser")
 const morgan = require("morgan")
 const helmet = require("helmet")
 const cors = require("cors")
@@ -8,9 +7,9 @@ const cors = require("cors")
 // local imports
 require("dotenv").config()
 
-let router = require("./routes/router")
-let urlRouter = require("./routes/LinkRouter")
-let exceptionHandler = require("./ExceptionHandler")
+let router = require("./src/routes/router")
+let urlRouter = require("./src/routes/LinkRouter")
+let exceptionHandler = require("./src/ExceptionHandler")
 
 // special variables
 const port = process.env.PORT || 3000
@@ -21,8 +20,8 @@ const app = express()
 // set up server dependencies
 app.use(cors())
 app.use(helmet())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 // middleware
 morgan.token("url", function getURL(req) {
