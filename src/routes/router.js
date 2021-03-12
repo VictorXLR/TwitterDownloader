@@ -1,5 +1,7 @@
 let express = require("express")
+let pjson = require("../../package.json")
 let router = express.Router()
+
 
 // Set up global state of the program
 router.all("*", (req, res, next) => {
@@ -12,5 +14,6 @@ router.all("*", (req, res, next) => {
         return next(620)
     } else next()
 })
+
 
 module.exports = router

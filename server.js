@@ -38,9 +38,9 @@ morgan.token("quality", function getQuality(req) {
 morgan.token("path", function getPath(req) {
     return req.pathx ? req.pathx : req.path
 })
-
-app.use(morgan(":method, :path, :response-time ms, :url, :quality quality"))
-
+if (process.env.NODE_ENV !== 'test') {
+    app.use(morgan(":method, :path, :response-time ms, :url, :quality quality"))
+}
 // TODO: Database stuff
 // Im thinking SQLite since its structured information at least for now :)
 
@@ -52,3 +52,5 @@ app.all("*", router)
 app.use(exceptionHandler.productionErrors)
 
 app.listen(port, () => console.log(`TwitterDownloader running at port ${port}`))
+
+module.exports = app; // this is for testing
