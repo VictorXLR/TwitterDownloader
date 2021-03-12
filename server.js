@@ -4,9 +4,6 @@ const morgan = require("morgan")
 const helmet = require("helmet")
 const cors = require("cors")
 
-// local imports
-require("dotenv").config()
-
 let router = require("./src/routes/router")
 let urlRouter = require("./src/routes/LinkRouter")
 let exceptionHandler = require("./src/ExceptionHandler")
