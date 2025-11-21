@@ -1,4 +1,5 @@
 // Package imports
+require("dotenv").config()
 const express = require("express")
 const morgan = require("morgan")
 const helmet = require("helmet")
@@ -6,6 +7,7 @@ const cors = require("cors")
 
 let router = require("./src/routes/router")
 let urlRouter = require("./src/routes/LinkRouter")
+let tweetRouter = require("./src/routes/TweetRouter")
 let exceptionHandler = require("./src/ExceptionHandler")
 
 // special variables
@@ -43,6 +45,7 @@ if (process.env.NODE_ENV !== 'test') {
 
 // Routing Handlers
 app.use("/link", urlRouter)
+app.use("/tweet", tweetRouter)
 app.all("*", router)
 
 // Error Handling
